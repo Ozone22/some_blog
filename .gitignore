@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# IDE temporary
+.idea
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -18,3 +21,4 @@
 
 # Ignore application configuration
 /config/application.yml
+
