@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+    <span><%= current_user.login %></span> |
+    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% else %>
+    <%= link_to 'Авторизация', new_user_session_path %> | <%= link_to 'Регистрация', new_user_registration_path %>
+<% end %>

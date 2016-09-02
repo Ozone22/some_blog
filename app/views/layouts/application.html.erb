@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TeacherBlog</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic" rel="stylesheet">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+
+    <%= render 'layouts/header' %>
+
+    <div class="info-block">
+
+      <% if notice %>
+      <div class="alert alert-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+      <% elsif alert%>
+      <div class="alert alert-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+      <% end %>
+
+    </div>
+
+    <%= yield %>
+
+  <%= render 'layouts/footer' %>
+
+  </div>
+
+</body>
+</html>
