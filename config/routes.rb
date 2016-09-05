@@ -9,6 +9,18 @@ Rails.application.routes.draw do
       :sign_up => 'signup'
     }
 
+  concern :shared_actions do
+    resources :users, only: [:show, :index]
+  end
+
+  namespace :admin do
+    concerns :shared_actions
+    resources :users, only: [:edit, :update, :destroy]
+    root 'users#index'
+  end
+
+  concerns :shared_actions
+
   get 'contact' => 'static_pages#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.

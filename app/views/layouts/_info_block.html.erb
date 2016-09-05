@@ -1,0 +1,13 @@
+<div class="info-block">
+
+  <% if notice %>
+      <div class="alert alert-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+  <% elsif alert%>
+      <div class="alert alert-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+  <% end %>
+
+</div>

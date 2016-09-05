@@ -1,6 +1,11 @@
-<% if user_signed_in? %>
-    <span><%= current_user.login %></span> |
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-<% else %>
-    <%= link_to 'Авторизация', new_user_session_path %> | <%= link_to 'Регистрация', new_user_registration_path %>
-<% end %>
+<div class="text-center">
+  <% if user_signed_in? %>
+      <%= link_to current_user.login, current_user %>
+      <% if current_user.admin? %>
+          <%= link_to 'Администрирование', admin_root_path %>
+      <% end %>
+      <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+  <% else %>
+      <%= link_to 'Авторизация', new_user_session_path %> <%= link_to 'Регистрация', new_user_registration_path %>
+  <% end %>
+</div>

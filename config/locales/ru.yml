@@ -8,12 +8,16 @@ ru:
           password: Пароль
           password:
             too_short: недостаточной длины
-        messages:
-          confirmation: "не совпадают"
-          record_invalid: 'Возникли ошибки: %{errors}'
-          restrict_dependent_destroy:
-            has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
-            has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
+            wrong_pass: должен содержать 1 заглавную латинскую букву и 1 маленькую
+          email:
+            wrong_email: неправильный email
+      messages:
+        record_invalid: 'неправильная запись'
+        confirmation: "не совпадают"
+        record_invalid: 'Возникли ошибки: %{errors}'
+        restrict_dependent_destroy:
+          has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
+          has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
   date:
     abbr_day_names:
     - Вс
@@ -270,3 +274,7 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  error_messages:
+    access_error: "Недостаточно прав"
+  page_title:
+    authorize: "Авторизация"

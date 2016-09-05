@@ -47,9 +47,26 @@ header {
   margin-top: 2%;
 }
 
+.edit_btn_block {
+  margin: 4% 0 2% 5%;
+}
+
 .category_sidebar {
   height: 100%;
   .nav-header {
+
+    .categories_nav_title {
+      width: 100%;
+
+      .down_arrow {
+        float: right;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $text_color;
+    }
     i {
       margin-right: 5px;
     }
@@ -104,6 +121,59 @@ header {
   }
 
 }
+
+// Authorization form
+
+.mainbox {
+  margin-top: 50px;
+
+  .form_additional_links {
+    float: right;
+    font-size: 80%;
+    position: relative;
+    top: -15px;
+  }
+
+  .panel-body {
+    padding-top: 30px;
+  }
+
+  #error_explanation h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .form_input {
+    margin-bottom: 25px;
+
+    .checkbox {
+      margin-left: 20px;
+    }
+  }
+}
+
+.page_title {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.usr_edit_form {
+  margin-top: 5%;
+}
+
+.users {
+  margin-top: 5%;
+  .login {
+    color: $text-color;
+    margin: 0;
+    font-size: 1.1em;
+    text-transform: uppercase;
+  }
+}
+
 
 
 footer {

@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+  page_title:
+    authorize: "Authorization"
+  activerecord:
+    errors:
+      user:
+        attributes:
+          password:
+            wrong_pass: "should contain at least 1 digit, 1 capital letter and 1 small letter"
+          email:
+            wrong_email: "wrong email address"
+  error_messages:
+    access_error: "Access denied"

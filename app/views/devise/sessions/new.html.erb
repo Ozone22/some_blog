@@ -1,26 +1,46 @@
-<h2>Вход</h2>
+<div class="container">
+  <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info" >
+      <div class="panel-heading">
+        <div class="panel-title"><%= t('page_title.authorize') %></div>
+        <div class="form_additional_links">
+          <%= render 'devise/shared/links' %>
+        </div>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <div class="panel-body">
 
-  <div class="field">
-    <%= f.label :password, "Пароль:" %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, "Запомнить меня" %>
+          <div class="form_input input-group">
+            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+            <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email' %>
+          </div>
+
+          <div class="form_input input-group">
+            <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Пароль' %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="form_input input-group">
+              <div class="checkbox">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, "Запомнить меня" %>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="form_input form-group">
+            <div class="col-sm-12 controls">
+              <%= f.submit 'Вход', class: 'btn btn-success' %>
+            </div>
+          </div>
+
+        <% end %>
+
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Вход" %>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>

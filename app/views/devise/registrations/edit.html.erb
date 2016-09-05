@@ -1,48 +1,54 @@
-<h2>Настройки профиля <%= resource_name.to_s.humanize %></h2>
+<h2 class="page_title">Настройки профиля</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+             html: { method: :put, class: 'usr_edit_form' }) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <%= render 'devise/shared/devise_error_messages' %>
 
-  <div class="field">
-    <%= f.label :login, "Логин" %><br />
-    <%= f.text_field :login, autofocus: true %>
-  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <div class="form-group">
+      <%= f.label :login, "Логин" %><br />
+      <%= f.text_field :login, autofocus: true, class: 'form-control' %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password, 'Пароль' %> <i>(Оставьте пустым, если не хотите его менять)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> символов минимум</em>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Ожидание подтверждения: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, 'Подтверждение пароля' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :password, 'Пароль' %> <i>(Оставьте пустым, если не хотите его менять)</i><br />
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control',
+                           placeholder: "#{ @minimum_password_length } символов минимум" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password, 'Текущии пароль' %> <i>(для подтверждения изменении)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, 'Пароль (еще раз)' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Обновить" %>
+    <div class="form-group">
+      <%= f.label :current_password, 'Текущии пароль' %> <i>(для подтверждения изменении)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Обновить", class: 'btn btn-success' %>
+    </div>
   </div>
 <% end %>
 
-<h3>Удалить мой профиль</h3>
+<div class="col-md-6">
 
-<p><%= button_to "Удалить профиль", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete %></p>
+  <%= link_to "Назад", :back, class: 'btn btn-primary edit_btn_block' %>
 
-<%= link_to "Назад", :back %>
+  <p class="bg-danger">
+    <%= button_to "Удалить профиль", registration_path(resource_name),
+                  data: { confirm: "Вы уверены?" }, method: :delete, class: 'btn btn-danger edit_btn_block' %>
+  </p>
+
+</div>

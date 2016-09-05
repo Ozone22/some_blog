@@ -1,0 +1,44 @@
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <%= link_to 'TeacherBlog Admin', admin_root_path, class: 'navbar-brand' %>
+  </div>
+
+  <!-- Top Menu Items -->
+  <ul class="nav navbar-right top-nav">
+    <li>
+      <%= link_to current_user.login, current_user %>
+    </li>
+    <li>
+      <%= link_to 'Обратно на сайт', root_path %>
+    </li>
+    <li>
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+    </li>
+  </ul>
+
+  <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+      <li class="active">
+        <%= link_to admin_users_path do %>
+            <i class="fa fa-fw fa-users"></i>
+            Пользователи
+        <% end %>
+        <li>
+          <%= link_to admin_users_path do %>
+              <i class="fa fa-fw fa fa-file-text-o"></i>
+              Статьи
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_users_path do %>
+              <i class="fa fa-fw fa fa-tasks"></i>
+              Категории
+          <% end %>
+        </li>
+        </ul>
+  </div>
+  <!-- /.navbar-collapse -->
+</nav>

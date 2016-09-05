@@ -14,23 +14,15 @@
 
     <%= render 'layouts/header' %>
 
-    <div class="info-block">
+    <%= render 'layouts/info_block' %>
 
-      <% if notice %>
-      <div class="alert alert-info">
-        <p class="notice"><%= notice %></p>
-      </div>
-      <% elsif alert%>
-      <div class="alert alert-danger">
-        <p class="alert"><%= alert %></p>
-      </div>
-      <% end %>
+    <div class="row">
+
+      <%= yield %>
 
     </div>
 
-    <%= yield %>
-
-  <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>
 
   </div>
 

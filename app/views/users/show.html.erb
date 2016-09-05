@@ -1,0 +1,4 @@
+Страница <%= @user.login %></br>
+<% if current_user?(@user) %>
+  <%= link_to 'Настройка профиля', edit_user_registration_path %>
+<% end %>

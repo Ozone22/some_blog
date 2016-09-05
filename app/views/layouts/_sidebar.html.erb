@@ -1,0 +1,25 @@
+<div class="col-md-3">
+  <div class="sidebar-nav sidebar-fixed-left category_sidebar">
+    <div class="nav">
+      <div class="nav-header">
+        <%= link_to users_path do %>
+            <i class="fa fa-user" aria-hidden="true"></i>Пользователи
+        <% end %>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="nav-header">
+        <a data-toggle="collapse" href="#collapse" class="categories_nav_title">
+          <i class="fa fa-bars" aria-hidden="true"></i>Категории
+          <i id='down_arrow' class="fa fa-angle-down down_arrow"></i>
+        </a>
+      </div>
+      <div id="collapse" class="nav collapse in">
+        <li class="nav-category"><a href="#">Русский язык, 7 класс</a></li>
+        <li class="nav-category"><a href="#">Русский язык, 10 класс</a></li>
+        <li class="nav-category"><a href="#">Названия</a></li>
+        <li class="nav-category"><a href="#">Названия</a></li>
+      </div>
+    </div>
+  </div>
+</div>
