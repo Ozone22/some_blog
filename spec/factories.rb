@@ -10,4 +10,8 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :category do
+    sequence(:title) { |n| "CategoryTitle#{n}" }
+  end
 end

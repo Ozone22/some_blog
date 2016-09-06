@@ -1,0 +1,22 @@
+<h1 class="page-header">
+  Категория <%= @category.title %> - редактирование
+</h1>
+
+<%= form_for [:admin, @category] do |f| %>
+
+    <%= render 'admin/layouts/error_messages', object: @category %>
+
+    <div class="col-lg-6">
+
+      <div class="form-group">
+        <%= f.label :title, 'Заголовок' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit 'Изменить', class: 'btn btn-large btn-primary' %>
+      </div>
+
+    </div>
+
+<% end %>

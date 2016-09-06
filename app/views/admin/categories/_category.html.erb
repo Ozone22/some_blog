@@ -1,0 +1,13 @@
+<li class="list-group-item">
+  <div class="user_list">
+    <div class="col-lg-5">
+      <%= link_to category.title, admin_category_path(category), class: 'login' %>
+    </div>
+    <div class="col-lg-2 col-lg-offset-1">
+      <%= link_to 'изменить', edit_admin_category_path(category) %>
+    </div>
+    <div class="col-lg-2">
+      <%= link_to 'удалить', admin_category_path(category), method: :delete, data: { confirm: 'Вы уверены?' } %>
+    </div>
+  </div>
+</li>

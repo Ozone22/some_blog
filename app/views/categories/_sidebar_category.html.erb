@@ -1,0 +1,12 @@
+<% if last_categories %>
+  <% last_categories.each do |category| %>
+    <li class="nav-category">
+      <%= link_to category.title, category %>
+    </li>
+  <% end %>
+  <li class="nav-category">
+    <%= link_to 'Все категории', categories_path %>
+  </li>
+<% else %>
+    <p>Категории пока нет</p>
+<% end %>
