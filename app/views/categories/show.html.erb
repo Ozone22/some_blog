@@ -1,10 +1,10 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="col-md-9">
-  <h1 class="page_title">Категории</h1>
+  <h1 class="page_title"><%= @category.title %></h1>
   <div class="users">
     <ul class="list-group users">
-      <%= render @categories %>
+      <%= render @category.articles %>
     </ul>
   </div>
 </div>

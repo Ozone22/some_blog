@@ -38,4 +38,16 @@ describe Category do
     it { should_not be_valid }
 
   end
+
+  describe 'when articles have a category' do
+
+    before do
+      @category.save
+      @article = FactoryGirl.create(:article, category: @category)
+    end
+
+    specify { expect(@category.articles.length).to eql 1 }
+    specify { expect(@category.articles).to include @article }
+  end
+
 end

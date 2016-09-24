@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   concern :shared_actions do
     resources :users, only: [:show, :index]
     resources :categories, only: [:show, :index]
+    resources :articles, only: [:show]
   end
 
   namespace :admin do
     resources :users, only: [:edit, :update, :destroy]
     resources :categories, only: [:new, :create, :edit, :update, :destroy]
+    resources :articles, except: [:show]
     concerns :shared_actions
     root 'users#index'
   end

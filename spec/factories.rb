@@ -14,4 +14,10 @@ FactoryGirl.define do
   factory :category do
     sequence(:title) { |n| "CategoryTitle#{n}" }
   end
+
+  factory :article do
+    sequence(:title) { |n| "ArticleTitle#{n}" }
+    content 'Simple content'
+    category
+  end
 end

@@ -14,6 +14,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'faker'
+# For file upload
+gem 'paperclip'
+gem 'paperclip-cloudinary'
+# For sensitive data store
+gem 'figaro'
+# Decorator for models
+gem 'draper'
 
 # For authentication
 gem 'devise'
@@ -26,8 +33,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-# Gem for config management
-gem 'figaro'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'

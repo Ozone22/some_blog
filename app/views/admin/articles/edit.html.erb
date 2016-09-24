@@ -1,0 +1,54 @@
+<h1 class="page-header">
+  <%= @article.title %> - редактирование
+</h1>
+
+<%= form_for [:admin, @article] do |f| %>
+
+    <%= render 'admin/layouts/error_messages', object: @article %>
+
+    <div class="col-lg-10">
+
+      <div class="form-group">
+        <%= f.label :title, 'Заголовок' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :category_id, 'Категория' %>
+        <%= f.select :category_id, categories_data_select_tag , {}, class: 'form-control' %>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="form-group">
+            <%= f.label :article_image, 'Изображение' %>(не обязательно)
+            <%= f.file_field :article_image, class: 'form-control' %>
+          </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+          <% unless @article.article_image.blank? %>
+              <p>Старое изображение:</p>
+              <%= image_tag(@article.show_image(:thumb)) %>
+          <% else %>
+              <span>Статья без изображения</span>
+          <% end %>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :content, 'Содержимое' %>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit 'Изменить', class: 'btn btn-large btn-primary' %>
+      </div>
+
+    </div>
+
+<% end %>
