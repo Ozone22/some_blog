@@ -1,1 +1,6 @@
-<%= @category.title %>
+<h1 class="page-header">
+  <%= @category.title %>
+</h1>
+<ul class="list-group users">
+  <%= render @category.articles %>
+</ul>

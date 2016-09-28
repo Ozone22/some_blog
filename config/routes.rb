@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'static_pages#home'
+  root 'articles#index'
 
   devise_for :users, :path => '', :controllers => { registrations: 'registrations' },
     :path_names => {
@@ -12,13 +12,13 @@ Rails.application.routes.draw do
   concern :shared_actions do
     resources :users, only: [:show, :index]
     resources :categories, only: [:show, :index]
-    resources :articles, only: [:show]
+    resources :articles, only: [:show, :index]
   end
 
   namespace :admin do
     resources :users, only: [:edit, :update, :destroy]
     resources :categories, only: [:new, :create, :edit, :update, :destroy]
-    resources :articles, except: [:show]
+    resources :articles, except: [:show, :index]
     concerns :shared_actions
     root 'users#index'
   end

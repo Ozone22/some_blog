@@ -1,0 +1,16 @@
+<div class="col-md-4">
+  <div class="article_elem">
+    <%= link_to article.category.title, category_path(article.category), class: 'category_type' %>
+    <%= image_tag(article.show_image(:thumb, show_default: true)) %>
+    <div class="article_description_preview">
+      <p class="article_title_preview">
+        <%= article.title %>
+      </p>
+      <span class="article_text_preview">
+        <%= article.short_content %>
+      </span>
+    </div>
+    <%= link_to 'Перейти к статье<i class="fa fa-angle-right" aria-hidden="true"></i>'.html_safe,
+                article_path(article), class: 'go_to_full_article' %>
+  </div>
+</div>

@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
 
   include UsersHelper
   include CategoriesHelper
+  include BaseViewHelper
 
 end

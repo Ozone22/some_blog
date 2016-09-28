@@ -21,24 +21,16 @@
   <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav side-nav">
-      <li class="active">
-        <%= link_to admin_users_path do %>
-            <i class="fa fa-fw fa-users"></i>
-            Пользователи
-        <% end %>
-        <li>
-          <%= link_to admin_articles_path do %>
-              <i class="fa fa-fw fa fa-file-text-o"></i>
-              Статьи
-          <% end %>
-        </li>
-        <li>
-          <%= link_to admin_categories_path do %>
-              <i class="fa fa-fw fa fa-tasks"></i>
-              Категории
-          <% end %>
-        </li>
-        </ul>
+      <li>
+        <%= active_link_to "<i class='fa fa-fw fa-users'></i>Пользователи".html_safe, admin_users_path %>
+      </li>
+      <li>
+        <%= active_link_to "<i class='fa fa-fw fa fa-file-text-o'></i>Статьи".html_safe, admin_articles_path %>
+      </li>
+      <li>
+        <%= active_link_to "<i class='fa fa-fw fa fa-tasks'></i>Категории".html_safe, admin_categories_path %>
+      </li>
+    </ul>
   </div>
   <!-- /.navbar-collapse -->
 </nav>
