@@ -18,6 +18,7 @@ FactoryGirl.define do
   factory :article do
     sequence(:title) { |n| "ArticleTitle#{n}" }
     content 'Simple content'
+    article_image { File.new("#{Rails.root}/spec/fixtures/images/default_article_image.jpeg") }
     category
   end
 end

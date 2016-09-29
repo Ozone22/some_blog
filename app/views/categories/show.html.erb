@@ -2,9 +2,5 @@
 
 <div class="col-md-9">
   <h1 class="page_title"><%= @category.title %></h1>
-  <div class="users">
-    <ul class="list-group users">
-      <%= render @category.articles %>
-    </ul>
-  </div>
+  <%= render 'articles/block_articles', articles: @category.articles %>
 </div>

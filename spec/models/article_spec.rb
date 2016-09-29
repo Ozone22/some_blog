@@ -4,7 +4,8 @@ describe Article do
 
   before do
 
-    params = { title: 'SomeTitle', content: 'SomeContent', category: FactoryGirl.create(:category) }
+    params = { title: 'SomeTitle', content: 'SomeContent', category: FactoryGirl.create(:category),
+               article_image: File.open(File.join(Rails.root, '/spec/fixtures/images/default_article_image.jpeg')) }
 
     @article = Article.new(params)
 
@@ -17,6 +18,7 @@ describe Article do
   it { should respond_to(:category) }
   it { should respond_to(:created_at) }
   it { should respond_to(:updated_at) }
+  it { should have_attached_file(:article_image) }
 
   it { should be_valid }
 
@@ -57,6 +59,14 @@ describe Article do
     before { @article.category = nil }
 
     it { should_not be_valid }
+
+  end
+
+  describe 'when article_image not present' do
+
+    before { @article.article_image = nil }
+
+    it { should be_valid }
 
   end
   

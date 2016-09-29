@@ -3,11 +3,15 @@ class ArticleDecorator < Draper::Decorator
   delegate_all
 
   def show_image(opts = :original, show_default: false)
-    if object.article_image.url.present?
+    if image_present?
       object.article_image.url(opts, cloudinary: { secure: true })
     elsif show_default
       'default_article_image.jpeg'
     end
+  end
+
+  def image_present?
+    object.article_image.url.present?
   end
 
   def short_content

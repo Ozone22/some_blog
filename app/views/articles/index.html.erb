@@ -1,13 +1,5 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="col-md-9">
-
-  <% @articles.each_slice(3) do |group| %>
-    <div class = "row">
-    <% group.each do |article| %>
-      <%= render 'block_article', article: article %>
-    <% end %>
-    </div>
-  <% end %>
-
+<%= render 'block_articles', articles: @articles %>
 </div>

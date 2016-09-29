@@ -8,6 +8,7 @@ describe 'Admin category pages' do
 
   before do
     @category = FactoryGirl.create(:category)
+    @article = FactoryGirl.create(:article, category: @category, article_image: nil)
     sign_in admin
   end
 
@@ -28,6 +29,7 @@ describe 'Admin category pages' do
     before { visit admin_category_path(@category) }
 
     it { should have_content(@category.title) }
+    it { should have_link(@article.title, href: admin_article_path(@article)) }
   end
 
   describe 'index page' do

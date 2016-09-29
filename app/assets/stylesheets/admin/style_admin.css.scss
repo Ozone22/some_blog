@@ -32,6 +32,7 @@ body {
 #page-wrapper {
   width: 100%;
   padding: 0;
+  overflow: hidden;
   background-color: #fff;
 }
 
@@ -266,6 +267,24 @@ ul.alert-dropdown {
   a {
     margin-left: 2%;
     color: gray;
+  }
+}
+
+.article_content {
+  width: 98%;
+  margin: auto;
+  font-size: 1.1em;
+  p {
+    margin-top: 5%;
+    text-indent: 2%;
+  }
+  .article_image {
+    width: 95%;
+    margin: 0 auto;
+    img {
+      border-radius: 2px;
+      width: 95%;
+    }
   }
 }
 

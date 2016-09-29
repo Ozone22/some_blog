@@ -1,4 +1,17 @@
-<%= @article.title %>
-<%= @article.category.title %>
-<%= @article.content %>
-<%= image_tag(@article.show_image ) %>
+<h1 class="page-header">
+  <%= @article.title %> <small><%= link_to @article.category.title, admin_categories_path %></small>
+</h1>
+<div class="article_content">
+  <div class="row">
+    <div class="article_content">
+      <div class="article_image">
+        <% if @article.image_present? %>
+          <%= image_tag(@article.show_image) %>
+        <% end %>
+      </div>
+      <p>
+        <%= @article.content %>
+      </p>
+    </div>
+  </div>
+</div>

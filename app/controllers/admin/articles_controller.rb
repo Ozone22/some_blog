@@ -14,7 +14,7 @@ class Admin::ArticlesController < Admin::AdminBaseController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.order(created_at: :desc)
   end
 
   def show
